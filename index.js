@@ -37,7 +37,6 @@ function sendEmail() {
             return resolve ({message: "email sent succesfully"})
             
         });
-        return resolve({message: "finished"})
     });
 }
 app.get("/", (req, res) => {
