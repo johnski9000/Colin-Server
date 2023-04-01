@@ -12,6 +12,12 @@ app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   next();
 });
+app.options('/send_email', (req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'POST');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    res.status(200).send();
+  });
 
 function sendEmail({name, email, number, service, message}) {
     console.log(email)
