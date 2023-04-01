@@ -14,11 +14,11 @@ app.use((req, res, next) => {
 });
 
 
-function sendEmail({
+function sendEmail(
     // name, 
-    email
+    // email
     // , number, service, message
-}) {
+) {
     return new Promise((resole, reject) => {
         var transporter = nodemailer.createTransport({
             service: "gmail",
