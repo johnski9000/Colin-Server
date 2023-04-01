@@ -14,12 +14,8 @@ app.use((req, res, next) => {
 });
 
 
-function sendEmail(
-    // name, 
-    // email
-    // , number, service, message
-) {
-    return new Promise((resole, reject) => {
+function sendEmail() {
+    return new Promise((resolve, reject) => {
         var transporter = nodemailer.createTransport({
             service: "gmail",
             auth: {
@@ -38,12 +34,10 @@ function sendEmail(
                 console.log(error)
                 return reject({ message: "an error has occured"})
             } 
-            setTimeout(() => {
-            }, 1000)
             return resolve ({message: "email sent succesfully"})
             
         });
-        return resole({message: "finished"})
+        return resolve({message: "finished"})
     });
 }
 app.get("/", (req, res) => {
