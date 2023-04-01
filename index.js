@@ -14,7 +14,7 @@ app.use((req, res, next) => {
 });
 
 
-function sendEmail() {
+function sendEmail(props) {
     return new Promise((resolve, reject) => {
         var transporter = nodemailer.createTransport({
             service: "gmail",
@@ -34,7 +34,7 @@ function sendEmail() {
                 console.log(error)
                 return reject({ message: "an error has occured"})
             } 
-            return resolve ({message: "email sent succesfully"})
+            return resolve ({message: "email sent succesfully", props})
             
         });
     });
