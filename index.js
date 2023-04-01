@@ -1,6 +1,7 @@
 const express = require("express");
 const nodemailer = require("nodemailer");
 const cors = require("cors");
+const allowCors = require("./allowCors")
 
 const app = express();
 const port = process.env.PORT || 3001;;
@@ -38,7 +39,7 @@ app.get("/", (req, res) => {
     .then((response) => res.send(response.message))
     .catch((error) => res.status(500).send(error.message))
 })
-app.post("/send_email", (req, res) => {
+app.put("/send_email", (req, res) => {
     sendEmail(req.body)
     .then((response) => res.send(response.message))
     .catch((error) => res.status(500).send(error.message))
