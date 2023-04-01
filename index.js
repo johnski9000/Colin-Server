@@ -40,13 +40,11 @@ function sendEmail(props) {
     });
 }
 app.get("/", (req, res) => {
-    res.setHeader("Access-Control-Allow-Origin", "*");
     sendEmail()
     .then((response) => res.send(response.message))
     .catch((error) => res.status(500).send(error.message))
 })
 app.post("/send_email", (req, res) => {
-    res.setHeader("Access-Control-Allow-Origin", "*");
     sendEmail(req.body)
     .then((response) => res.send(response.message))
     .catch((error) => res.status(500).send(error.message))
@@ -54,9 +52,3 @@ app.post("/send_email", (req, res) => {
 app.listen(port, () => {
     console.log(`nodemailerProject is listening at http://localhost:${port}`);
 })
-app.options('/send_email', (req, res) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'POST');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-    res.status(200).send();
-  });
