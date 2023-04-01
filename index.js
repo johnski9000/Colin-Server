@@ -43,11 +43,13 @@ function sendEmail({name, email, number, service, message}) {
     });
 }
 app.get("/", (req, res) => {
+    res.setHeader("Access-Control-Allow-Origin", "*");
     sendEmail()
     .then((response) => res.send(response.message))
     .catch((error) => res.status(500).send(error.message))
 })
 app.post("/send_email", (req, res) => {
+    res.setHeader("Access-Control-Allow-Origin", "*");
     sendEmail(req.body)
     .then((response) => res.send(response.message))
     .catch((error) => res.status(500).send(error.message))
