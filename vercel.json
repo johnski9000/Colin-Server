@@ -4,12 +4,5 @@
         "src": "index.js",
         "use": "@vercel/node"
       }
-    ],
-    "routes": [
-      {
-        "src": "/send_email",
-        "methods": ["POST"],
-        "dest": "/api/send_email"
-      }
     ]
   }
