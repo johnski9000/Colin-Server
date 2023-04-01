@@ -29,7 +29,7 @@ function sendEmail(
         });
         const mail_configs = {
             from: "jwdigitalltd@gmail.com",
-            to: email,
+            to: "januszwozniak.bth@gmail.com",
             subject: "Testing Koding 101 email",
             text: "Just checking if this email will be sent"
         };
