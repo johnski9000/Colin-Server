@@ -66,6 +66,7 @@ const port = process.env.PORT || 3001;
 const allowCors = (fn) => async (req, res) => {
   res.setHeader("Access-Control-Allow-Credentials", true);
   const allowedOrigins = [
+    "https://colinjameshairdressing.co.uk",
     "https://sarah-s-nails.vercel.app",
     "http://localhost:3000",
   ];
